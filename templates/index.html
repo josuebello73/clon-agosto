@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <h1>Blog de Josefino</h1>
-    </header>
+{% extends "_base.html" %}
+
+{% block content %}
     <main>
-        <ul>
+    <ul>
             {% for post in post_list %}
                 <li>
                     <a href="">{{ post.title }}</a>
                 </li>
             {% endfor %}
-        </ul>
+    </ul>
     </main>
-</body>
-</html>    
+{% endblock content %}
