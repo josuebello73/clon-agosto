@@ -7,6 +7,8 @@
         <p><strong>Autor:</strong> {{ post.author }}</p>
         <p>{{ post.content }}</p>
     </main>
-    <a href="{% url 'post_update' post.pk %}">Editar</a>
-    <a href="{% url 'post_delete' post.pk %}">Eliminar</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'post_update' post.pk %}">Editar</a>
+        <a href="{% url 'post_delete' post.pk %}">Eliminar</a>
+    {% endif %}     
 {% endblock content %}
